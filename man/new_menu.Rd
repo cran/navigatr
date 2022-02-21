@@ -27,7 +27,7 @@ When an item becomes active, the attrs will be added to its attributes.}
 \item{class}{A character vector of subclasses passed to \code{\link[vctrs:new_data_frame]{vctrs::new_data_frame()}}.}
 }
 \value{
-A \code{menu} object, a subclass of class \code{data.frame}.
+A \code{navigatr_menu} object, a subclass of class \code{data.frame}.
 }
 \description{
 To build a new navigation menu, give \code{new_menu()} unique keys and a list of their corresponding values.
@@ -38,14 +38,14 @@ Each menu item can be accessed by \code{\link[=activate]{activate()}}.
 \examples{
 library(dplyr)
 
-mn1 <- new_menu(key = c("band_members", "band_instruments"),
-                value = list(band_members, band_instruments))
-mn1
+band <- new_menu(key = c("band_members", "band_instruments"),
+                 value = list(band_members, band_instruments))
+band
 
 # You can also build a nested menu
-mn2 <- new_menu(key = c("key1", "key2"),
-                value = list(mn1, mn1))
-mn2
+bands <- new_menu(key = c("key1", "key2"),
+                  value = list(band, band))
+bands
 
 }
 \seealso{
